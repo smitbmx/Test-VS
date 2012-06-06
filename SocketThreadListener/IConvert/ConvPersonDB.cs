@@ -13,7 +13,7 @@ namespace ClientServerPerson.IConvert
             SqlConnection Con = new SqlConnection(@"Data Source=SMIT-PC\SQLEXPRESS;Initial Catalog=ss;Integrated Security=True;");
             string strCom = "INSERT INTO dbo.Employee ([FirstName],[LastName],[Age]) VALUES (@Name,@LastName,@Age)";
             //string strCom2 = "INSERT INTO dbo.Contacts ([Phone] VALUES(@Phone) WHERE UserId=)";
-            //надо заинсертить телефон
+            //надо заинсертить телефон......
             SqlCommand Com = new SqlCommand(strCom, Con);
             Com.Parameters.AddWithValue("@Name", pers.Name);
             Com.Parameters.AddWithValue("@LastName", pers.LastName);
