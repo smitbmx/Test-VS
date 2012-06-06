@@ -58,6 +58,7 @@ namespace ClientServerPerson
             string allString = string.Empty;
             for (int i = 0; i < k; i++)
             {
+                //JSON;save;name;lastName;age
                 allString += Convert.ToChar(b[i]);
                 Console.Write(Convert.ToChar(b[i]));
             }
