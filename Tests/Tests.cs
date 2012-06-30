@@ -13,5 +13,11 @@ namespace Tests
         {
             Assert.AreEqual(1, 1);
         }
+
+        [Test]
+        public void Test2()
+        {
+            Assert.AreEqual(2, 2);
+        }
     }
 }
