@@ -40,7 +40,8 @@ namespace ClientServerPerson.DS
                     string lastName = reader["LastName"].ToString();
                     string age = reader["Age"].ToString();
                     string phone = reader["Phone"].ToString();
-                    string str = string.Concat(id, ";", name, ";", lastName, ";", age, ";", phone);
+                    string photo64 = reader["ImageName"].ToString();
+                    string str = string.Concat(id, ";", name, ";", lastName, ";", age, ";", phone, ";", photo64);
                     Lpers.Add(IConvert.ConvFactory.GetInstance("DB").FromString(str));
                 }
                 reader.Close();

@@ -44,7 +44,7 @@ namespace ClientServerPerson
 
             Console.WriteLine("Connection accepted from " + localSocket.RemoteEndPoint);
 
-            byte[] b = new byte[8000];
+            byte[] b = new byte[80000];
             int k = localSocket.Receive(b);
             Console.WriteLine("Recieved...");
             for (int i = 0; i < k; i++)
@@ -58,7 +58,7 @@ namespace ClientServerPerson
             string allString = string.Empty;
             for (int i = 0; i < k; i++)
             {
-                //JSON;save;name;lastName;age
+                //JSON;save;name;lastName;age;phone;photo64
                 allString += Convert.ToChar(b[i]);
                 Console.Write(Convert.ToChar(b[i]));
             }
@@ -70,6 +70,7 @@ namespace ClientServerPerson
             p.LastName = arr[3];
             p.Age = Convert.ToInt32(arr[4]);
             p.Phone = arr[5];
+            p.Photo64 = arr[6];
             PList pList = new PList();
 
             pList.pList.Add(p);
@@ -84,7 +85,7 @@ namespace ClientServerPerson
 
                 for (int i = 0; i < pList.pList.Count; i++)
                 {
-                    allString += string.Concat(pList.pList[i].Name, ";", pList.pList[i].LastName, ";", pList.pList[i].Age, ";", pList.pList[i].Phone, "$");
+                    allString += string.Concat(pList.pList[i].Name, ";", pList.pList[i].LastName, ";", pList.pList[i].Age, ";", pList.pList[i].Phone, ";", pList.pList[i].Photo64, "$");
                 }
 
                 ASCIIEncoding asen1 = new ASCIIEncoding();
